@@ -1,0 +1,13 @@
+.button {
+  margin: 20px;
+  cursor: pointer;
+  width: 80px;
+  height: 40px;
+  border-radius: 10px;
+  background-image: linear-gradient(rgb(126, 212, 154), rgb(77, 48, 158));
+  border: 1px solid rgb(77, 48, 158);
+  box-shadow: 0 0 5ch rgb(21, 255, 0);
+}
+/* .button:focus {
+  zoom: 1.1;
+} */
