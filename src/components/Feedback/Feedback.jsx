@@ -28,6 +28,10 @@ export default class Feedback extends Component {
     return positivePercentage;
   };
   render() {
+    const options = Object.keys(this.state);
+    console.log('=> options', options);
+
+    console.log('options', options);
     const { good, neutral, bad } = this.state;
     const total = this.countTotalFeedback();
     const positivePercentage = this.countPositiveFeedbackPercentage({
@@ -37,7 +41,10 @@ export default class Feedback extends Component {
     return (
       <>
         <Section title="Please leave feedback">
-          <FeedbackOptions onOptinClick={this.handleOnFeedback} />
+          <FeedbackOptions
+            options={options}
+            onOptinClick={this.handleOnFeedback}
+          />
         </Section>
         {total === 0 ? (
           <Notification message="No feedback given" />

@@ -1,32 +1,19 @@
 import s from './FeedbackOptions.module.css';
 
-export default function FeedbackOptions({ onOptinClick }) {
+export default function FeedbackOptions({ options, onOptinClick }) {
   return (
     <>
-      <button
-        type="button"
-        name="good"
-        className={s.button}
-        onClick={onOptinClick}
-      >
-        Good
-      </button>
-      <button
-        type="button"
-        name="neutral"
-        className={s.button}
-        onClick={onOptinClick}
-      >
-        Neutral
-      </button>
-      <button
-        type="button"
-        name="bad"
-        className={s.button}
-        onClick={onOptinClick}
-      >
-        Bad
-      </button>
+      {options.map(option => (
+        <button
+          key={option}
+          type="button"
+          name={option}
+          className={s.button}
+          onClick={onOptinClick}
+        >
+          {option}
+        </button>
+      ))}
     </>
   );
 }
