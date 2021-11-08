@@ -16,8 +16,6 @@ export default class Feedback extends Component {
     this.setState(preventState => ({
       [e.target.name]: preventState[e.target.name] + 1,
     }));
-    this.countTotalFeedback();
-    this.countPositiveFeedbackPercentage(this.state);
   };
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
@@ -29,9 +27,6 @@ export default class Feedback extends Component {
   };
   render() {
     const options = Object.keys(this.state);
-    console.log('=> options', options);
-
-    console.log('options', options);
     const { good, neutral, bad } = this.state;
     const total = this.countTotalFeedback();
     const positivePercentage = this.countPositiveFeedbackPercentage({
@@ -63,4 +58,3 @@ export default class Feedback extends Component {
     );
   }
 }
-//
